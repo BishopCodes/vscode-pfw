@@ -3,6 +3,7 @@
     "displayName": "Paste from Web",
     "description": "Takes a resource via URL (.js, .png, .html, ...) and downloads/copies it to a place the user selects",
     "author": "BishopCodes",
+    "publisher": "BishopCodes",
     "license": "MIT",
     "version": "0.0.1",
     "engines": {
