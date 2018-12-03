@@ -24,7 +24,6 @@ Any of the following settings can be overriden though usersettings.json
 
 ## Known Issues
 
-
 * Wont create a file if name is too large (WIP)
 * `pfw.overrideExistingFile` config not implemented (was removed during last stages of version 1)
 * `pfw.openFileAfterCopy` missing implementation details
@@ -37,6 +36,7 @@ Any of the following settings can be overriden though usersettings.json
 
 * Add back in `pfw.overrideExistingFile`
 * Implement setting `pfw.openFileAfterCopy`
+* Fix file name handler (exclude invalid file name characters)
 * Add testing
 * Refactor internal code
 * Limit large file names
