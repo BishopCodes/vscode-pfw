@@ -1,0 +1,84 @@
+{
+    "name": "vscode-pfw",
+    "displayName": "Paste from Web",
+    "description": "Takes a resource via URL (.js, .png, .html, ...) and downloads/copies it to a place the user selects",
+    "author": "BishopCodes",
+    "license": "MIT",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.29.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:pasteFromWeb.execute"
+    ],
+    "main": "./extension",
+    "contributes": {
+        "configuration": {
+            "type": "object",
+            "title": "Paste from Web Extension Configuration",
+            "properties": {
+                "pfw.alwaysShowFileNamePrompt": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Always prompt for the file name to be saved"
+                },
+                "pfw.defaultFileName": {
+                    "type": [
+                        "string",
+                        "null"
+                    ],
+                    "default": "filename.ext",
+                    "description": "Default file name to use if not specified by the URL"
+                },
+                "pfw.showProgressPrompts": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show info prompts during web download progress"
+                },
+                "pfw.overrideExistingFile": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Override existing file from output of extension otherwise GUID will be used for copies"
+                },
+                "pfw.useUuidRename": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Use timestamp UUID instead of -copy during duplicate rename process"
+                }
+            }
+        },
+        "commands": [
+            {
+                "command": "pasteFromWeb.execute",
+                "title": "Paste from Web"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "pasteFromWeb.execute"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21",
+        "eslint": "^4.11.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    },
+    "dependencies": {
+        "clipboardy": "^1.2.3",
+        "mime-types": "^2.1.21",
+        "request": "^2.88.0",
+        "uuid": "^3.3.2"
+    }
+}
