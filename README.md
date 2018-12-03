@@ -1,18 +1,18 @@
 # Paste from Web for Visual Studio Code
----
+
 A [Visual Studio Code](https://code.visualstudio.com/) extension that allows the ability to copy a web url and paste the contents as a file into a given project. 
 
 > Note: I am trying to build out more projects in my spare time and include updating this one. However, due to work, school and family my time will be limited so please be patient with any resolutions to issues reported.
 
 ## Quick Start
----
+
 * Install extension into VSCode and reload
 * Create or open an existing project that has files and or folders. 
 * Copy a web url address such as https://picsum.photos/200
 * Right click on any file or folder and select **Paste from Web** from the context menu
 
 ## Extension Settings
----
+
 Any of the following settings can be overriden though usersettings.json
 
 * `pfw.alwaysShowFileNamePrompt`: Sets to show the prompt for the file to be saved (default:true)
@@ -23,13 +23,13 @@ Any of the following settings can be overriden though usersettings.json
 * `pfw.useUuidRename`: Use a timestamp UUID instead of .copy during the duplicate rename process (default: false)
 
 ## Known Issues
----
+
 
 * Wont create a file if name is too large (WIP)
 
 
 ## Release Notes
----
+
 
 ### 1.0.1 [Unreleased]
 
