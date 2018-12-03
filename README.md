@@ -1,6 +1,6 @@
 # Paste from Web for Visual Studio Code
 ---
-A (https://code.visualstudio.com/)[Visual Studio Code] extension that allows the ability to copy a web url and paste the contents as a file into a given project. 
+A [Visual Studio Code](https://code.visualstudio.com/) extension that allows the ability to copy a web url and paste the contents as a file into a given project. 
 
 > Note: I am trying to build out more projects in my spare time and include updating this one. However, due to work, school and family my time will be limited so please be patient with any resolutions to issues reported.
 
@@ -33,9 +33,10 @@ Any of the following settings can be overriden though usersettings.json
 
 ### 1.0.1 [Unreleased]
 
-* Refactor internal code
 * Add testing
+* Refactor internal code
 * Limit large file names
+* Cleanup documentation
 
 ### 1.0.0 [Current]
 
