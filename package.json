@@ -5,7 +5,7 @@
     "author": "BishopCodes",
     "publisher": "BishopCodes",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "engines": {
         "vscode": "^1.29.0"
     },
@@ -21,7 +21,7 @@
     "activationEvents": [
         "onCommand:pasteFromWeb.execute"
     ],
-    "main": "./extension",
+    "main": "./src/extension",
     "contributes": {
         "configuration": {
             "type": "object",
@@ -40,20 +40,30 @@
                     "default": "filename.ext",
                     "description": "Default file name to use if not specified by the URL"
                 },
+                "pfw.openFileAfterCopy": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "After download and write is completed open the file in the editor (only documents)"
+                },
+                "pfw.overwriteExistingFile": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Overwrite existing file otherwise rename to unique instance"
+                },
+                "pfw.promptBeforeOverwrite": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Will prompt before overwrite which which if not chosen will default to renaming"
+                },
                 "pfw.showProgressPrompts": {
                     "type": "boolean",
                     "default": true,
                     "description": "Show info prompts during web download progress"
                 },
-                "pfw.overrideExistingFile": {
-                    "type": "boolean",
-                    "default": false,
-                    "description": "Override existing file from output of extension otherwise GUID will be used for copies"
-                },
                 "pfw.useUuidRename": {
                     "type": "boolean",
                     "default": false,
-                    "description": "Use timestamp UUID instead of -copy during duplicate rename process"
+                    "description": "Use timestamp UUID instead of .copy during duplicate rename process"
                 }
             }
         },
@@ -83,9 +93,10 @@
         "@types/mocha": "^2.2.42"
     },
     "dependencies": {
+        "axios": "^0.18.0",
         "clipboardy": "^1.2.3",
-        "mime-types": "^2.1.21",
-        "request": "^2.88.0",
+        "filenamify": "^2.1.0",
+        "mime": "^2.4.0",
         "uuid": "^3.3.2"
     }
 }
